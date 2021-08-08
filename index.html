@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Genexhys Arteaga: Músico Instrumentista</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="jquery-1.10.2.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+						<!-- Panel (Banner) -->
+							<section class="panel banner right">
+								<div class="content span-3-75">
+									
+									<h1> Genexhys <br /> Arteaga </h1>
+									<p> Soy <em><strong>Genexhys</strong></em> , músico técnico instrumentista <br> Tengo 19 años, aquí se muestran mis proyectos.<br /> 
+										Canto y toco la guitarra acústica, guitarra eléctrica <br> batería, chelo y la flauta traversa</p>
+
+									<ul class="actions">
+										<li><a href="#two" class="button primary color2 circle icon solid fa-angle-right">Next</a></li>
+										<li > <p class="rodar"><b><strong>Haz clic aquí para ver mis proyectos</strong></b>  </p> </li>
+									</ul>
+
+								</div>
+								
+								
+							</section>
+
+						<!-- Panel (Spotlight) -->
+							<section class="panel spotlight small" id="first">
+								<div class="fondocv">
+									<div class="">
+											<h2 class="rodar playertitle">CURRICULUM <br> VITAE</h2>
+										<p class="rodar cv"> Haz clic <a href="https://drive.google.com/file/d/1IQIcxifHh70fYC7LuWdeqEbtHxtLaMRZ/view?usp=sharing" target="_blank"><strong>aquí</strong></a> para ver mi hoja de vida </p>
+									</div>
+								</div>
+								
+							</section>
+
+						<!-- Panel (Spotlight) -->
+						<section class="panel banner right player">
+							<div class="contentplayer">
+								
+								<h1 class="mp3playertitle"> Reproductor <br />  </h1>
+								<p class="seguir"> Pistas originales y covers</p>
+
+							<!-- Player-->
+							<div id="main">
+								<div id="image">
+									<img src="/images/1.png" class="cuadrar"/>
+								</div>
+								<div id="player">
+									<div id="songTitle">Demo</div>
+									<div id="buttons">
+										<button id="pre" onclick="pre()"><img src="/images/Pre.png" height="90%" width="90%"/></button>
+										<button id="play" onclick="playOrPauseSong()"><img src="/images/Pause.png"/></button>
+										<button id="next" onclick="next()"><img src="/images/Next.png" height="90%" width="90%"/></button>
+									</div>
+								</div>
+							</div>
+
+							</div>
+
+								
+							</section>
+
+						<!-- Panel -->
+							<section class="panel">
+								<div class="intro color1">
+									<h1 class="major">Videos</h1>
+									<p>Un apartado de mi trabajo presencial</p>
+									<img src="/images/flecha.png" class="images" alt="">
+								</div>
+								
+								<div class="gallery">
+									<div class="group span-3">
+										
+										<video src="/video/vid2.mp4" class="orientar" controls></video>
+										<video src="/video/vid3.mp4" class="orientar" controls></video>
+									</div>
+									<div class="group span-1">
+										<video src="/video/vid4.mp4" class="orientar" controls></video>
+										<video src="/video/vid6.mp4" class="orientar" controls></video>
+										
+									</div>
+									<div class="group span-2">
+										<video src="/video/vid1.mp4" class="orientar" controls></video>
+										<video src="/video/vid5.mp4" class="orientar" controls></video>
+									</div>
+									
+							</section>
+
+						<!-- Panel -->
+							<section class="panel color4-alt">
+								<div class="intro color4">
+									<h2 class="contact">PONTE EN CONTACTO</h2>
+									<p>Si estás interesado en mi trabajo, puedes contactarme a través de:</p>
+								</div>
+								<div class="inner columns divided">
+									<div class="span-1-5">
+										<ul class="contact-icons color1">
+											<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/profile.php?id=100010918178555" target="_blank">Genexhys Arteaga</a></li>
+											<li class="icon brands fa-instagram"><a href="https://www.instagram.com/hnygen/" target="_blank">@hnygen</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+	<script type="text/javascript">
+    
+        var songs = ["./music/Creep.m4a","./music/Foreing.m4a","./music/Replica.m4a","./music/Pendiente1.m4a","./music/Pendiente2.m4a"];
+        var poster = ["./images/1.png","./images/2.jpg","./images/3.jpg","./images/background.jpg","./images/4.jpg"];
+        var taitol = ["Creep","Foreing","Replica","Pendiente 1","Pendiente 2"];
+        var songTitle = document.getElementById("songTitle");
+        var fillBar = document.getElementById("fill");
+        
+        var song = new Audio();
+        var currentSong = 0;    // it point to the current song
+        
+        window.onload = playSong;   // it will call the function playSong when window is load
+        
+        function playSong(){
+            
+            song.src = songs[currentSong];  //set the source of 0th song 
+            
+            songTitle.textContent = taitol[currentSong]; // set the title of song
+            
+            song.play();    // play the song
+        }
+        
+        function playOrPauseSong(){
+            
+            if(song.paused){
+                song.play();
+                $("#play img").attr("src","./images/Pause.png");
+            }
+            else{
+                song.pause();
+                $("#play img").attr("src","./images/Play.png");
+            }
+        }
+        
+        song.addEventListener('timeupdate',function(){ 
+            
+            var position = song.currentTime / song.duration;
+            
+            fillBar.style.width = position * 100 +'%';
+        });
+        
+    
+        function next(){
+            
+            currentSong++;
+            if(currentSong > 4){
+                currentSong = 0;
+            }
+            playSong();
+            $("#play img").attr("src","./images/Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+    
+        function pre(){
+            
+            currentSong--;
+            if(currentSong < 0){
+                currentSong = 4;
+            }
+            playSong();
+            $("#play img").attr("src","./images/Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</html>
